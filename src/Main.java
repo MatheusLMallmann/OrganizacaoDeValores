@@ -1,6 +1,7 @@
 import Inserção.Manual;
 import Menus.ObterEscolha;
 import Ordenacao.BubbleSort;
+import Ordenacao.InsertionSort;
 
 import java.text.ParseException;
 import java.util.Date;
@@ -13,6 +14,7 @@ public class Main {
         ObterEscolha obterEscolha = new ObterEscolha();
         Manual manual = new Manual();
         BubbleSort bs = new BubbleSort();
+        InsertionSort is = new InsertionSort();
         int escolhaDoTipoDosValores = obterEscolha.ColetaEscolha();
         int escolhaDoFormatoDeInsercaoDosValores = obterEscolha.FormatoDeInsercaoDosDados();
 
@@ -22,15 +24,17 @@ public class Main {
                     List<Integer> lista = manual.manualInteger();
                     System.out.println("Vetor original:");
                     System.out.println(lista);
-                    System.out.println("Vetor ordenado Bubble Sort:");
+                    System.out.println("Vetor ordenado utilizando Bubble Sort:");
                     bs.ordenacaoInteger(lista);
+                    System.out.println("Vetor ordenado utilizando Insertion Sort:");
+                    is.ordenacaoInteger(lista);
                 }
 
                 if (escolhaDoTipoDosValores == 2){
                     List<Double> lista = manual.manualFloat();
                     System.out.println("Vetor original:");
                     System.out.println(lista);
-                    System.out.println("Vetor ordenado Bubble Sort:");
+                    System.out.println("Vetor ordenado utilizando Bubble Sort:");
                     bs.ordenacaoFloat(lista);
                 }
 
@@ -38,7 +42,7 @@ public class Main {
                     List<Date> lista = manual.manualDate();
                     System.out.println("Vetor original:");
                     System.out.println(lista);
-                    System.out.println("Vetor ordenado Bubble Sort:");
+                    System.out.println("Vetor ordenado utilizando Bubble Sort:");
                     bs.ordenacaoDate(lista);
                 }
 
@@ -46,7 +50,7 @@ public class Main {
                     List<String> lista = manual.manualString();
                     System.out.println("Vetor original:");
                     System.out.println(lista);
-                    System.out.println("Vetor ordenado Bubble Sort:");
+                    System.out.println("Vetor ordenado utilizando Bubble Sort:");
                     bs.ordenacaoString(lista);
 
                 }
