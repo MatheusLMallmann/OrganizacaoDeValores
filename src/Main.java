@@ -36,6 +36,8 @@ public class Main {
                     System.out.println(lista);
                     System.out.println("Vetor ordenado utilizando Bubble Sort:");
                     bs.ordenacaoFloat(lista);
+                    System.out.println("Vetor ordenado utilizando Insertion Sort:");
+                    is.ordenacaoFloat(lista);
                 }
 
                 if (escolhaDoTipoDosValores == 3){
@@ -52,6 +54,8 @@ public class Main {
                     System.out.println(lista);
                     System.out.println("Vetor ordenado utilizando Bubble Sort:");
                     bs.ordenacaoString(lista);
+                    System.out.println("Vetor ordenado utilizando Insertion Sort:");
+                    is.ordenacaoPalavras(lista);
 
                 }
                 break;
