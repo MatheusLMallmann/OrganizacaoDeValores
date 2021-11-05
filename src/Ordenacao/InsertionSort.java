@@ -30,7 +30,7 @@ public class InsertionSort {
 
         System.out.println(lista);
     }
-    public void ordenacaoPalavras(List<String> lista){
+    public void ordenacaoString(List<String> lista){
         for (int j = 1; j < lista.size(); j++) {
             String valor = lista.get(j);
             int i = j - 1;
@@ -48,6 +48,20 @@ public class InsertionSort {
         System.out.println(lista);
     }
     public void ordenacaoDate(List<Date> lista){
+        for (int j = 1; j < lista.size(); j++) {
+            Date valor = lista.get(j);
+            int i = j - 1;
 
+            while (i >= 0) {
+                if (valor.compareTo(lista.get(i)) > 0) {
+                    break;
+                }
+                lista.set(i+1, lista.get(i));
+                i--;
+            }
+            lista.set(i+1, valor);
+        }
+
+        System.out.println(lista);
     }
 }
