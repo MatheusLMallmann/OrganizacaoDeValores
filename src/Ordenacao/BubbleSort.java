@@ -4,6 +4,8 @@ import java.util.Date;
 import java.util.List;
 
 public class BubbleSort {
+
+    int passos = 0;
     public void ordenacaoInteger(List<Integer> lista){
         int aux = 0;
         for(int i = 0; i<lista.size(); i++){

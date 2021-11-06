@@ -1,5 +1,7 @@
 package Insercao;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -26,7 +28,9 @@ public class Randomizer {
         Double max = 1000.0, min = 0.0;
         for(int i = 0; i < 100; i++){
             Double numero = min + (max - min) * random.nextDouble();
-            listaFloat.add(i, numero);
+            BigDecimal numberBigDecimal = new BigDecimal(numero);
+            numberBigDecimal = numberBigDecimal.setScale(2, RoundingMode.HALF_UP);
+            listaFloat.add(i, numberBigDecimal.doubleValue());
         }
         return listaFloat;
     }
