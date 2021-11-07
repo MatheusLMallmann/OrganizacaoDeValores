@@ -45,21 +45,44 @@ public class ReadFile {
     }
 
     public List<String> readStrings() throws IOException{
-        Scanner scanner = new Scanner(new File("./src/Arquivos/Strings"));
-        List<String> listaString = new ArrayList<String>();
-        while (scanner.hasNext()) {
-            listaString.add(scanner.nextLine());
+        String conteudoArquivo = new String(Files.readAllBytes(Paths.get("./src/Arquivos/Strings")), StandardCharsets.UTF_8);
+        char[] conteudo = conteudoArquivo.toCharArray();
+        String palavra = "";
+        List<String> listaString = new ArrayList<>();
+        int i = 0, posicao = 0;
+        while(i < conteudo.length){
+            if(conteudo[i] == ' '){
+                listaString.add(posicao, palavra);
+                posicao++;
+                i++;
+                palavra = "";
+            }else{
+                palavra += conteudo[i];
+                i++;
+            }
         }
 
         return listaString;
     }
 
     public List<Date> readDatas() throws IOException, ParseException {
-        List<String> listaString = Files.readAllLines(Paths.get("Datas"));
+        String conteudoArquivo = new String(Files.readAllBytes(Paths.get("./src/Arquivos/Datas")), StandardCharsets.UTF_8);
+        char[] conteudo = conteudoArquivo.toCharArray();
+        String dataString = "";
+        Date data = null;
         List<Date> listaDatas = new ArrayList<>();
-
-        for (int i = 0; i < listaString.size(); i++){
-            listaDatas.add(i, new SimpleDateFormat("dd/MM/yyyy").parse(listaString.get(i)));
+        int i = 0, posicao = 0;
+        while(i < conteudo.length){
+            if(conteudo[i] == ' '){
+                data = new SimpleDateFormat("dd/MM/yyyy").parse(dataString);
+                listaDatas.add(posicao, data);
+                posicao++;
+                i++;
+                dataString = "";
+            }else{
+                dataString += conteudo[i];
+                i++;
+            }
         }
 
         return listaDatas;

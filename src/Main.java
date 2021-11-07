@@ -150,7 +150,15 @@ public class Main {
                 }
 
                 if(escolhaDoTipoDosValores == 3){
-
+                    List<Date> lista = readFile.readDatas();
+                    System.out.println("Vetor original:");
+                    System.out.println(lista);
+                    System.out.println("Vetor ordenado utilizando Bubble Sort:");
+                    bs.ordenacaoDate(lista);
+                    System.out.println("Vetor ordenado utilizando Insertion Sort:");
+                    is.ordenacaoDate(lista);
+                    System.out.println("Vetor ordenado utilizando Selection Sort");
+                    ss.ordenacaoData(lista);
                 }
 
                 if(escolhaDoTipoDosValores == 4){
