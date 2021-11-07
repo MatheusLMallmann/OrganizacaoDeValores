@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class ObterEscolha {
 
-    private String ColetaNome(){
+    public String ColetaNome(){
         System.out.println("Nos informe o seu nome: ");
         Scanner input = new Scanner(System.in);
         String nome = input.nextLine();
@@ -12,8 +12,7 @@ public class ObterEscolha {
         return nome;
     }
 
-    public int ColetaEscolha(){
-        String nome = ColetaNome();
+    public int ColetaEscolha(String nome){
         Scanner input = new Scanner(System.in);
 
         System.out.println("Olá " + nome + ", escolha uma das opções abaixo: ");
@@ -24,6 +23,11 @@ public class ObterEscolha {
         System.out.println("(0) - Sair");
 
         int escolha = Integer.parseInt(input.nextLine());
+
+        if( escolha != 0 && escolha != 1 && escolha != 2 && escolha != 3 && escolha != 3 && escolha != 4){
+            System.out.println("Opção inválida...");
+            return ColetaEscolha(nome);
+        }
 
         if(escolha == 0){
             System.out.println("Encerrando sessão... Até logo :)");

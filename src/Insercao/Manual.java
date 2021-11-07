@@ -14,7 +14,7 @@ public class Manual {
         int quantidade = Integer.parseInt(input.nextLine());
         int x = 1;
         Integer valor = 0;
-        while(x < quantidade){
+        while(x <= quantidade){
             System.out.println("Informe o " + x + "° valor: ");
             valor = Integer.parseInt(input.nextLine());
 

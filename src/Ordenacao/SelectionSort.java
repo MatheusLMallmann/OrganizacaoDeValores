@@ -1,10 +1,13 @@
 package Ordenacao;
 
+import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class SelectionSort {
     public void ordenacaoInteger(List<Integer> lista){
+        long tempoInicial = System.currentTimeMillis();
         for (int i = 0; i < lista.size() - 1; i++){
             int index = i;
             for (int j = i + 1; j < lista.size(); j++){
@@ -17,10 +20,12 @@ public class SelectionSort {
             lista.set(i, menorValor);
         }
 
+        this.calculaTempoExcecucao(tempoInicial, System.currentTimeMillis());
         System.out.println(lista);
     }
 
     public void ordenacaoFloat(List<Double> lista){
+        long tempoInicial = System.currentTimeMillis();
         for (int i = 0; i < lista.size() - 1; i++){
             int index = i;
             for (int j = i + 1; j < lista.size(); j++){
@@ -33,10 +38,12 @@ public class SelectionSort {
             lista.set(i, menorValor);
         }
 
+        this.calculaTempoExcecucao(tempoInicial, System.currentTimeMillis());
         System.out.println(lista);
     }
 
     public void ordenacaoString(List<String> lista){
+        long tempoInicial = System.currentTimeMillis();
         for (int i = 0; i < lista.size() - 1; i++){
             int index = i;
             for (int j = i + 1; j < lista.size(); j++){
@@ -49,10 +56,12 @@ public class SelectionSort {
             lista.set(i, menorValor);
         }
 
+        this.calculaTempoExcecucao(tempoInicial, System.currentTimeMillis());
         System.out.println(lista);
     }
 
     public void ordenacaoData(List<Date> lista){
+        long tempoInicial = System.currentTimeMillis();
         for (int i = 0; i < lista.size() - 1; i++){
             int index = i;
             for (int j = i + 1; j < lista.size(); j++){
@@ -65,7 +74,14 @@ public class SelectionSort {
             lista.set(i, dataMenor);
         }
 
-        System.out.println(lista);
+        this.calculaTempoExcecucao(tempoInicial, System.currentTimeMillis());
+        List<String> listaFormatada = new ArrayList<>();
+        lista.forEach(x-> listaFormatada.add(DateFormat.getDateInstance().format(x)));
+        System.out.println(listaFormatada);
+    }
+
+    private void calculaTempoExcecucao(long tempoInicial, long tempoFinal) {
+        System.out.println("Tempo de excução foi de " + (tempoFinal - tempoInicial) + " ms");
     }
 }
 
