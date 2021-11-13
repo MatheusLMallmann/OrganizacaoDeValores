@@ -15,21 +15,26 @@ public class Main {
 
     public static void main(String[] args) throws ParseException, IOException {
 
+        // Instancia do objeto ObterEscolha para chamar os métodos dos menus
         ObterEscolha obterEscolha = new ObterEscolha();
-        Manual manual = new Manual();
-        Randomizer randomizer = new Randomizer();
-        ReadFile readFile = new ReadFile();
+        // Instancia de objetos responsáveis pelo ordenação dos valores
         BubbleSort bs = new BubbleSort();
         InsertionSort is = new InsertionSort();
         SelectionSort ss = new SelectionSort();
+        // Chamada de método para pegar o nome do usuário
         String nome = obterEscolha.ColetaNome();
 
         do {
+            // Chamada de métodos para pegar mostrar os menus
+            // E coletar as escolhas do usuário
             int escolhaDoTipoDosValores = obterEscolha.ColetaEscolha(nome);
             int escolhaDoFormatoDeInsercaoDosValores = obterEscolha.FormatoDeInsercaoDosDados();
 
             switch (escolhaDoFormatoDeInsercaoDosValores){
+                // Case 1: Usuário deseja informar manualmente os valores
                 case 1:
+                    Manual manual = new Manual();
+
                     if (escolhaDoTipoDosValores == 1){
                         List<Integer> lista = manual.manualInteger();
                         System.out.println("Vetor original:");
@@ -78,7 +83,11 @@ public class Main {
                         ss.ordenacaoString(lista);
                     }
                     break;
+
+                // Case 2: Usuário deseja que os valores ordenados sejam aleatórios
                 case 2:
+                    Randomizer randomizer = new Randomizer();
+
                     if (escolhaDoTipoDosValores == 1){
                         List<Integer> lista = randomizer.geradorListaInteiros();
                         System.out.println("Vetor original:");
@@ -127,7 +136,11 @@ public class Main {
                         ss.ordenacaoString(lista);
                     }
                     break;
+
+                // Case 3: Usuário deseja que os valores venham de um arquivo
                 case 3:
+                    ReadFile readFile = new ReadFile();
+
                     if (escolhaDoTipoDosValores == 1){
                         List<Integer> lista = readFile.readInteiros();
                         System.out.println("Vetor original:");

@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+// Classe responsável pela captura de valores inteiros, valores reais, palavras e datas
 public class Manual {
 
     // Objeto que irá pegar o input do usuário
