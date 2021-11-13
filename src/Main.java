@@ -1,6 +1,6 @@
+import Insercao.Manual;
 import Insercao.Randomizer;
 import Insercao.ReadFile;
-import Inserção.Manual;
 import Menus.ObterEscolha;
 import Ordenacao.BubbleSort;
 import Ordenacao.InsertionSort;
