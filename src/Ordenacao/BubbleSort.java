@@ -7,6 +7,7 @@ import java.util.List;
 
 public class BubbleSort {
 
+    // Ordena valores inteiros
     public void ordenacaoInteger(List<Integer> lista){
         long tempoInicial = System.currentTimeMillis();
         int aux = 0;
@@ -23,6 +24,7 @@ public class BubbleSort {
         System.out.println(lista);
     }
 
+    // Ordena valores reais
     public void ordenacaoFloat(List<Double> lista){
         long tempoInicial = System.currentTimeMillis();
         double aux = 0.0;
@@ -40,6 +42,7 @@ public class BubbleSort {
         System.out.println(lista);
     }
 
+    // Ordena palavras
     public void ordenacaoString(List<String> lista){
         long tempoInicial = System.currentTimeMillis();
         String aux = "";
@@ -57,6 +60,7 @@ public class BubbleSort {
         System.out.println(lista);
     }
 
+    // Ordena datas
     public void ordenacaoDate(List<Date> lista) {
         long tempoInicial = System.currentTimeMillis();
         Date aux = null;
@@ -76,6 +80,7 @@ public class BubbleSort {
         System.out.println(listaFormatada);
     }
 
+    // Calcula tempo de execução
     private void calculaTempoExcecucao(long tempoInicial, long tempoFinal) {
         System.out.println("Tempo de excução foi de " + (tempoFinal - tempoInicial) + " ms");
     }

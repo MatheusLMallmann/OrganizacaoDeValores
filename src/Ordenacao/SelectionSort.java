@@ -6,6 +6,8 @@ import java.util.Date;
 import java.util.List;
 
 public class SelectionSort {
+
+    // Ordena valores inteiros
     public void ordenacaoInteger(List<Integer> lista){
         long tempoInicial = System.currentTimeMillis();
         for (int i = 0; i < lista.size() - 1; i++){
@@ -24,6 +26,7 @@ public class SelectionSort {
         System.out.println(lista);
     }
 
+    // Ordena valores reais
     public void ordenacaoFloat(List<Double> lista){
         long tempoInicial = System.currentTimeMillis();
         for (int i = 0; i < lista.size() - 1; i++){
@@ -42,6 +45,7 @@ public class SelectionSort {
         System.out.println(lista);
     }
 
+    // Ordena palavras
     public void ordenacaoString(List<String> lista){
         long tempoInicial = System.currentTimeMillis();
         for (int i = 0; i < lista.size() - 1; i++){
@@ -60,6 +64,7 @@ public class SelectionSort {
         System.out.println(lista);
     }
 
+    // Ordena datas
     public void ordenacaoData(List<Date> lista){
         long tempoInicial = System.currentTimeMillis();
         for (int i = 0; i < lista.size() - 1; i++){
@@ -80,6 +85,8 @@ public class SelectionSort {
         System.out.println(listaFormatada);
     }
 
+
+    // Calcula tempo de execução
     private void calculaTempoExcecucao(long tempoInicial, long tempoFinal) {
         System.out.println("Tempo de excução foi de " + (tempoFinal - tempoInicial) + " ms");
     }
